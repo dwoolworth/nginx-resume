@@ -5,11 +5,11 @@ pod for future setups.
 
 Build and run test with docker:
 ```
-$ docker build -t <tag> .
-$ docker run -p 80:80 <tag>
+$ docker build -t derrickwoolworth/nginx-resume .
+$ docker run -p 80:80 derrickwoolworth/nginx-resume
 ```
 
 Deploy to k8s cluster:
 ```
-$ kubectl apply -n resume -f manifests/deployment.yml
+$ kubectl apply -f https://raw.githubusercontent.com/dwoolworth/nginx-resume/main/manifests/deployment.yml
 ```
