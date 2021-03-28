@@ -1,7 +1,7 @@
 Docker image to host my resume via Kubernetes
 ===
 Just a simple container image to host my resume via docker and provides a test
-pod for future setups.
+deployment for future setups.
 
 Build and run test with docker:
 ```
