@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: namespace
+metadata:
+  name: my-resume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-my-resume
+  namespace: my-resume
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-resume
+  template:
+    metadata:
+      labels:
+        app: my-resume
+    spec:
+      containers:
+      - name: my-resume
+        image: derrickwoolworth/nginx-resume:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-my-resume-svc
+spec:
+  selector:
+    app: nginx-my-resume
+  ports:
+  - port: 80
+    targetPort: 80

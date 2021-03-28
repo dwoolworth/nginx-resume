@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  font-family: 'Lato', 'Lucida Sans', Verdana, sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a, a:visited {
+  color: #F0F8FF;
+}
+
+a:hover {
+  color: white;
+}
+
+div.main {
+  background: rgb(0,48,143);
+  width: 100%;
+}
+
+.column {
+  flex-basis: 100%;
+  padding: 26px 0;
+}
