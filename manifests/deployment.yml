@@ -36,7 +36,8 @@ metadata:
   namespace: my-resume
 spec:
   selector:
-    app: nginx-my-resume
+    app: my-resume
   ports:
   - port: 80
     targetPort: 80
+type: LoadBalancer
