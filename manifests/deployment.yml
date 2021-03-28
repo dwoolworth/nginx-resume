@@ -1,25 +1,25 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: my-resume
+  name: myresume
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-my-resume
-  namespace: my-resume
+  name: nginx-myresume
+  namespace: myresume
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-resume
+      app: myresume
   template:
     metadata:
       labels:
-        app: my-resume
+        app: myresume
     spec:
       containers:
-      - name: my-resume
+      - name: myresume
         image: derrickwoolworth/nginx-resume:latest
         imagePullPolicy: Always
         resources:
@@ -32,11 +32,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-my-resume-svc
-  namespace: my-resume
+  name: nginx-myresume-svc
+  namespace: myresume
 spec:
   selector:
-    app: my-resume
+    app: myresume
   ports:
   - protocol: TCP
     port: 80
